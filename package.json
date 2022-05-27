@@ -1,17 +1,25 @@
 {
   "name": "orders",
-  "private": true,
   "version": "0.0.0",
+  "private": true,
   "scripts": {
+    "serve": "vite preview",
+    "build": "vite build",
     "dev": "vite",
-    "build": "vue-tsc --noEmit && vite build",
-    "preview": "vite preview",
-    "lint:script": "eslint --ext .ts,vue --ignore-path .gitignore ."
+    "lint:script": "eslint --ext .ts,vue --ignore-path .gitignore .",
+    "preview": "vite preview"
   },
   "dependencies": {
-    "vue": "^3.2.25"
+    "@mdi/font": "5.9.55",
+    "element-plus": "^2.2.2",
+    "roboto-fontface": "*",
+    "vue": "^3.2.25",
+    "vue-router": "^4.0.13",
+    "webfontloader": "^1.0.0"
   },
   "devDependencies": {
+    "@types/node": "^17.0.35",
+    "@types/webfontloader": "^1.0.0",
     "@typescript-eslint/eslint-plugin": "^5.26.0",
     "@typescript-eslint/parser": "^5.26.0",
     "@vitejs/plugin-vue": "^2.3.3",
@@ -31,6 +39,6 @@
   },
   "lint-staged": {
     "*.{ts,vue}": "eslint --fix",
-    "*": "prettier -w -u" 
+    "*": "prettier -w -u"
   }
 }

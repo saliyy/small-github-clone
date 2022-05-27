@@ -55,21 +55,23 @@
         <a
           href="#"
           class="inline-block px-4 py-2 leading-none border rounded text-white mr-5 text-lg border-white hover:border-transparent hover:text-teal-800 hover:bg-white mt-4 lg:mt-0"
-          >Sign in</a
         >
+          <router-link :to="{ name: 'SignIn' }">SignIn</router-link>
+        </a>
         <a
           href="#"
           class="inline-block px-4 py-2 leading-none border rounded text-white border-white text-lg hover:border-transparent hover:text-teal-800 hover:bg-white mt-4 lg:mt-0"
-          >Sign up</a
         >
+          <router-link :to="{ name: 'SignUp' }">SignIn</router-link>
+        </a>
       </div>
     </div>
   </nav>
 </template>
 
 <style scoped>
-  .navigation {
-    display: flex;
-    align-items: center;
-  }
+.navigation {
+  display: flex;
+  align-items: center;
+}
 </style>
