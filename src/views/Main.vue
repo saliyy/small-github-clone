@@ -1,21 +1,28 @@
-<script lang="ts" setup>
-import TheHeader from "@/components/layout/TheHeader.vue";
-</script>
+<script lang="ts" setup></script>
 
 <template>
   <div>
-    <header class="header">
-      <TheHeader />
-    </header>
-    <main class="container mx-auto main">
-      <router-view></router-view>
-    </main>
+    <div class="flex flex-row justify-center md:space-x-8">
+      <div class="basis-1/3">
+        <el-card class="box-card">
+          <span> Search repositories </span>
+        </el-card>
+      </div>
+      <div class="basis-1/3">
+        <el-card class="box-card">
+          <span>Search users</span>
+        </el-card>
+      </div>
+    </div>
   </div>
 </template>
 
-<style>
-.header {
-  position: sticky;
-  width: 100%;
+<style lang="scss" scoped>
+.box-card:hover {
+  background-color: #373737;
+  cursor: pointer;
+  span {
+    color: white;
+  }
 }
 </style>
