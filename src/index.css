@@ -2,13 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: SourceSansPro-Regular;
-  src: url('./assets/SourceSansPro-Regular.ttf');
-}
-
 body {
-  background-color: rgb(204 251 241);
-  font-family: SourceSansPro-Regular;
+  background-color: #ffffe1;
   font-size: 20px;
 }
