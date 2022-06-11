@@ -1,17 +1,3 @@
-<script setup lang="ts">
-import { onMounted, shallowRef } from "@vue/runtime-core";
-import User from "../../models/User";
-import { getUserByName } from "../../services/GitHubAPIService";
-
-const user = shallowRef<User | null>(null);
-
-onMounted(() => {
-  getUserByName("torvalds").then((res) => {
-    user.value = res.data || {};
-  });
-});
-</script>
-
 <template>
   <div class="user">
     <div class="user_info">
