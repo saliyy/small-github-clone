@@ -1,8 +1,15 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { useRouter } from "vue-router";
+const router = useRouter();
+const goToMain = () => router.push({ path: "/" });
+</script>
 
 <template>
   <nav class="flex items-center justify-between flex-wrap bg-zinc-900 p-6">
-    <div class="flex items-center flex-shrink-0 text-white mr-6">
+    <div
+      class="flex items-center flex-shrink-0 text-white mr-6 cursor-pointer"
+      @click="goToMain"
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="48"

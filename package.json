@@ -19,6 +19,7 @@
     "npm": "^8.12.1",
     "roboto-fontface": "*",
     "vue": "^3.2.25",
+    "vue-debounce": "^4.0.0",
     "vue-router": "^4.0.13",
     "webfontloader": "^1.0.0"
   },

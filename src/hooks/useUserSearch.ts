@@ -1,5 +1,5 @@
-import { ref, watch, shallowReactive } from "vue";
-import GitHubAPIService from "../services/GitHubAPIService"
+import { ref, watch, shallowReactive, computed } from "vue";
+import { getUserByName } from "../services/GitHubAPIService"
 import User from "../models/User"
 import { AxiosResponse } from "axios";
 
@@ -9,20 +9,32 @@ export default function useUserSearch() {
 
     const searchInProcess = ref(false)
 
-    const userSuggestionList = shallowReactive<User[]>([]);
+    const userSuggestionList = shallowReactive<User[]>([])
+
+    const searchUsers = computed(() => {
+        return userSuggestionList.filter(user => {
+            if (user.login.toLowerCase().includes(searchField.value.toLocaleLowerCase())) {
+                return user
+            } else {
+                userSuggestionList.length = 0
+            }
+        })
+
+    })
 
     const MAX_SUGGESTION_LENGTH = 8 
 
     watch(searchField, () => {
         searchInProcess.value = true
+
         if (searchField.value === '') {
             userSuggestionList.length = 0
             searchInProcess.value = false
-        }
+        } 
     })
 
     const searchInGithub = () => {
-        GitHubAPIService.getUserByName(searchField.value).then((res: AxiosResponse<User>) => {
+        getUserByName(searchField.value).then((res: AxiosResponse<User>) => {
             if (res.data.id && listAvailable()) {
                 userSuggestionList.push(res.data)
             }
@@ -41,7 +53,7 @@ export default function useUserSearch() {
     return {
         searchField,
         searchInGithub,
-        userSuggestionList,
+        searchUsers,
         searchInProcess
     }
 }

@@ -17,6 +17,24 @@ const routes: Array<RouteRecordRaw> = [
     name: 'users',
     component: () => import('@/views/Users/index.vue'),
   },
+  {
+    path: "/users/:login",
+    name: "show-user",
+    props: route => ({ login: route.params.login }),
+    component: () => import("@/views/users/UserShow.vue"),
+  },
+  {
+    path: "/githubrepo/:ownerName/:repoName/:branch/:path*/",
+    name: "show-repo",
+    props: route => ({ 
+        repoName: route.params.repoName, 
+        ownerName: route.params.ownerName,
+        branch: route.params.branch,
+        path: route.params.path
+    }),
+    component: () => import("@/views/repositories/ReposShow.vue"),
+  },
+
 ]
 
 const router = createRouter({

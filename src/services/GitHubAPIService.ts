@@ -43,7 +43,7 @@ export const getReposFiles = async function (
   query: Query
 ): GitHubData<RepositoryFile[]> {
   return apiGithub.get(
-    `/repos/${query.userName}/${query.repositoryName}/contents/${query.path}/?ref=${query.branch}`
+    `/repos/${query.ownerName}/${query.repoName}/contents/${query.path}/?ref=${query.branch}`
   );
 };
 

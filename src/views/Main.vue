@@ -5,18 +5,11 @@ const goTo = (path: string) => router.push({ path: path });
 </script>
 
 <template>
-  <div>
-    <div class="flex flex-row justify-center md:space-x-8">
-      <div class="basis-1/3">
-        <el-card class="box-card" @click="goTo('/repositories')">
-          <span> Search repositories </span>
-        </el-card>
-      </div>
-      <div class="basis-1/3">
-        <el-card class="box-card" @click="goTo('/users')">
-          <span>Search users</span>
-        </el-card>
-      </div>
+  <div class="container mx-auto">
+    <div class="flex justify-center">
+      <el-card class="box-card w-80" @click="goTo('/users')">
+        <span>Go!</span>
+      </el-card>
     </div>
   </div>
 </template>

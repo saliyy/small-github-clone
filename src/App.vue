@@ -7,7 +7,7 @@ import TheHeader from "@/components/layout/TheHeader.vue";
     <header class="header">
       <TheHeader />
     </header>
-    <main class="container mx-auto main mt-10">
+    <main class="container mx-auto mt-20">
       <router-view></router-view>
     </main>
   </div>
